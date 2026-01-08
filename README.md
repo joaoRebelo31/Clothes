@@ -2,8 +2,7 @@
 Clothing social media app
 
 ## Features
-- Uploading photos and info of your clothes to your personal wardrobe
-- Sorting and filtering your wardrobe
+- Uploading images and info of your clothes to your personal wardrobe
 - Uploading photos with the associated outfit to your public profile
 - Searching and following other users profiles
 - Adding others outfits to your "interessed" list
