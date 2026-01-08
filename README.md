@@ -9,7 +9,7 @@ Clothing social media app
 - Adding others outfits to your "interessed" list
 
 ## Tech Stack
-- Kotlin / Java
+- Kotlin
 - Android SDK
 
 ## Screenshots
