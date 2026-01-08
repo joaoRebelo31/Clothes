@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Clothes</string>
+    <string name="title_closet">Closet</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="title_social">Social</string>
+    <string name="title_shop">Shop</string>
+    <string name="title_profile">Profile</string>
+    <string name="add_icon_dscr">Add</string>
+    <string name="filter_icon_dscr">filter</string>
+    <string name="order_icon_dscr">order</string>
+    <string name="pick_icon_dscr">pick</string>
+    <string name="remove_icon_dscr">remove</string>
+    <string name="post_icon_dscr">TODO</string>
+    <string name="logout_icon_dscr">TODO</string>
+    <string name="settings_icon_dscr">settings</string>
+    <string name="search_icon_dscr">search</string>
+    <string name="search_hint">Search...</string>
+    <string name="back_icon_dscr">Back</string>
+    <string name="agenda_icon_dscr">Agenda</string>
+    <string name="type_hint">Type</string>
+    <string name="brand_hint">Brand</string>
+    <string name="color_hint">Color</string>
+    <string name="size_hint">Size</string>
+    <string name="list_hint">List</string>
+    <string name="share_icon_dscr">Share</string>
+    <string name="follow_icon_dscr">Follow</string>
+    <string name="password_hint">Password</string>
+    <string name="username_hint">Username</string>
+    <string-array name="list_items">
+        <item>Owned</item>
+        <item>Wishlist</item>
+    </string-array>
+    <string-array name="category_filter_items">
+        <item>All</item>
+        <item>Piece</item>
+        <item>Combination</item>
+    </string-array>
+    <string-array name="list_filter_items">
+        <item>All</item>
+        <item>Owned</item>
+        <item>Wishlist</item>
+    </string-array>
+</resources>

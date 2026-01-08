@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.closet.ClosetActivity"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/top_bar"
+            android:layout_width="0dp"
+            android:layout_height="85dp"
+            android:background="@color/bars_color"
+            android:elevation="2dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/icon_add"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/add_icon"
+            android:contentDescription="@string/add_icon_dscr"
+            android:elevation="2dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/top_bar"
+            app:layout_constraintEnd_toEndOf="@+id/top_bar" />
+
+        <ImageButton
+            android:id="@+id/icon_filter"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/filter_icon"
+            android:contentDescription="@string/filter_icon_dscr"
+            android:elevation="2dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/top_bar"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/clothes_recycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layoutManager="LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_bar"
+            tools:listitem="@layout/item_grid_image" />
+
+        <include
+            android:id="@+id/bottom_nav"
+            layout="@layout/bottomnavigation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/add_frame"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/bars_color"
+            android:elevation="1dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/top_bar">
+
+            <Button
+                android:id="@+id/add_piece_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="4dp"
+                android:backgroundTint="@color/inputs_color"
+                android:elevation="1dp"
+                android:text="Piece"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/add_combination_piece"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp" />
+
+            <Button
+                android:id="@+id/add_combination_piece"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="4dp"
+                android:backgroundTint="@color/inputs_color"
+                android:elevation="1dp"
+                android:text="Combination"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/add_piece_button"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/filter_frame"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/bars_color"
+            android:elevation="1dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/top_bar">
+
+            <Spinner
+                android:id="@+id/category_input"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/input_frame"
+                android:drawablePadding="8dp"
+                android:elevation="1dp"
+                android:hint="@string/list_hint"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingLeft="4dp"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="#A2AAA6"
+                android:textColorLink="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/list_input"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/list_input"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/input_frame"
+                android:drawablePadding="8dp"
+                android:hint="@string/list_hint"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingLeft="4dp"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="#A2AAA6"
+                android:textColorLink="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/category_input"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

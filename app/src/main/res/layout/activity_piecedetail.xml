@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.closet.PieceDetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/top_bar"
+            android:layout_width="0dp"
+            android:layout_height="85dp"
+            android:background="@color/bars_color"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/icon_back"
+            android:layout_width="28dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/back_icon"
+            android:contentDescription="@string/back_icon_dscr"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/top_bar"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_bar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/piece_image"
+                    android:layout_width="0dp"
+                    android:layout_height="555dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/card_frame"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toTopOf="@+id/info_card"
+                    app:layout_constraintEnd_toEndOf="@+id/info_card"
+                    app:layout_constraintStart_toStartOf="@+id/info_card"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/image_icon" />
+
+                <ImageButton
+                    android:id="@+id/edit_piece_icon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/edit_icon"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/piece_image"
+                    app:layout_constraintTop_toTopOf="@+id/piece_image" />
+
+                <View
+                    android:id="@+id/info_card"
+                    android:layout_width="0dp"
+                    android:layout_height="232dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/card_frame"
+                    app:layout_constraintBottom_toTopOf="@+id/delete_button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <EditText
+                    android:id="@+id/brand_input"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/input_frame"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/brand_hint"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="12dp"
+                    android:textColorHighlight="@color/white"
+                    android:textColorHint="#A2AAA6"
+                    android:textColorLink="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/color_input"
+                    app:layout_constraintEnd_toEndOf="@+id/info_card"
+                    app:layout_constraintStart_toEndOf="@+id/brand_text" />
+
+                <EditText
+                    android:id="@+id/color_input"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/input_frame"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/color_hint"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="12dp"
+                    android:textColorHighlight="@color/white"
+                    android:textColorHint="#A2AAA6"
+                    android:textColorLink="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/size_input"
+                    app:layout_constraintEnd_toEndOf="@+id/info_card"
+                    app:layout_constraintStart_toEndOf="@+id/brand_text" />
+
+                <EditText
+                    android:id="@+id/size_input"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/input_frame"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/size_hint"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="12dp"
+                    android:textColorHighlight="@color/white"
+                    android:textColorHint="#A2AAA6"
+                    android:textColorLink="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/list_input"
+                    app:layout_constraintEnd_toEndOf="@+id/info_card"
+                    app:layout_constraintStart_toEndOf="@+id/brand_text" />
+
+                <Spinner
+                    android:id="@+id/list_input"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/input_frame"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/list_hint"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="4dp"
+                    android:textColorHighlight="@color/white"
+                    android:textColorHint="#A2AAA6"
+                    android:textColorLink="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/info_card"
+                    app:layout_constraintEnd_toEndOf="@+id/info_card"
+                    app:layout_constraintStart_toEndOf="@+id/brand_text" />
+
+                <EditText
+                    android:id="@+id/type_input"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/input_frame"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/type_hint"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="12dp"
+                    android:textColorHighlight="@color/white"
+                    android:textColorHint="#A2AAA6"
+                    android:textColorLink="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/brand_input"
+                    app:layout_constraintEnd_toEndOf="@+id/info_card"
+                    app:layout_constraintStart_toEndOf="@+id/brand_text" />
+
+                <TextView
+                    android:id="@+id/type_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Type"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/type_input"
+                    app:layout_constraintStart_toStartOf="@+id/info_card"
+                    app:layout_constraintTop_toTopOf="@+id/type_input" />
+
+                <TextView
+                    android:id="@+id/list_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="List"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/list_input"
+                    app:layout_constraintStart_toStartOf="@+id/info_card"
+                    app:layout_constraintTop_toTopOf="@+id/list_input" />
+
+                <TextView
+                    android:id="@+id/size_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Size"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/size_input"
+                    app:layout_constraintStart_toStartOf="@+id/info_card"
+                    app:layout_constraintTop_toTopOf="@+id/size_input" />
+
+                <TextView
+                    android:id="@+id/color_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Color"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/color_input"
+                    app:layout_constraintStart_toStartOf="@+id/info_card"
+                    app:layout_constraintTop_toTopOf="@+id/color_input" />
+
+                <TextView
+                    android:id="@+id/brand_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="16dp"
+                    android:text="Brand"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/brand_input"
+                    app:layout_constraintStart_toStartOf="@+id/info_card"
+                    app:layout_constraintTop_toTopOf="@+id/brand_input" />
+
+                <Button
+                    android:id="@+id/delete_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:backgroundTint="@color/cancel_color"
+                    android:text="Delete"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/confirm_button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="2dp" />
+
+                <Button
+                    android:id="@+id/confirm_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:backgroundTint="@color/confirm_color"
+                    android:text="Save"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/delete_button"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="2dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/bottom_nav"
+            layout="@layout/bottomnavigation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

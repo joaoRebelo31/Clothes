@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bars_color">#4F3D35</color>
+    <color name="inputs_color">#897C70</color>
+    <color name="background_color">#4D0F1B</color>
+    <color name="cancel_color">#B3463F</color>
+    <color name="confirm_color">#3F59B3</color>
+    <color name="black">#0A0908</color>
+    <color name="white">#F2F4F3</color>
+</resources>
